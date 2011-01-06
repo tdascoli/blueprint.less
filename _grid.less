@@ -62,7 +62,7 @@
 /* Add these to a column to prepend empty cols. */
 
 .prepend (@level: 1) {
-	padding-left: ((@column * @level) + (@level * 10px));
+	padding-left: (@level * @column + (@level - 1) * 10px);
 }
 
 /* Border on right hand side of a column. */
