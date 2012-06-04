@@ -133,11 +133,13 @@ hr.space {
 
 
 /* Clearing floats without extra markup
-   Based on Simple Clearing of Floats by Sitepoint
-   [http://www.sitepoint.com/simple-clearing-of-floats/] */
+   Based on Simple Clearing of Floats at Sitepoint
+   [http://www.sitepoint.com/simple-clearing-of-floats/] &
+   [http://www.quirksmode.org/css/clearing.html] & */
 
 .clearfix, .container {
-  overflow: auto;
+  overflow: hidden;
+  width: 100%;
 }
 
 /* Regular clearing
