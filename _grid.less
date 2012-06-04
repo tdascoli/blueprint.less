@@ -26,11 +26,35 @@
   width: 100%;
 }
 
+/* Above clearfix hack can cause clipping when you wish to display contents over the container's edge using absolute positioning or negative margins. Old clearfix will live here. */
+
+.clearfix (after) {
+  display:block;
+  
+  &:after{
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow:hidden;
+  }
+}
+
 /* A container should group all your columns. Above clearfix hack is applied. */
 .container {
   width: @width;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.container(clearfix-after) {
+  width: @width;
+  margin: 0 auto;
+  overflow: hidden;
+  
+  /* This will also import the :after rule. */
+  .clearfix(after);
 }
 
 /* Use this class on any .span / container to see the grid. */
