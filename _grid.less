@@ -15,10 +15,22 @@
 @margin: 10px;
 @box_background: #E5ECF9;
 
-/* A container should group all your columns. */
+
+/* Clearing floats without extra markup
+   Based on Simple Clearing of Floats at Sitepoint
+   [http://www.sitepoint.com/simple-clearing-of-floats/] &
+   [http://www.quirksmode.org/css/clearing.html] & */
+
+.clearfix {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* A container should group all your columns. Above clearfix hack is applied. */
 .container {
   width: @width;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 /* Use this class on any .span / container to see the grid. */
@@ -129,17 +141,6 @@ hr.space {
   background: #fff;
   color: #fff;
   visibility: hidden;
-}
-
-
-/* Clearing floats without extra markup
-   Based on Simple Clearing of Floats at Sitepoint
-   [http://www.sitepoint.com/simple-clearing-of-floats/] &
-   [http://www.quirksmode.org/css/clearing.html] & */
-
-.clearfix, .container {
-  overflow: hidden;
-  width: 100%;
 }
 
 /* Regular clearing
