@@ -1,0 +1,21 @@
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container {
+
+  @media (min-width: @screen-sm-min) {
+    width: @container-sm + @grid-column-gutter;
+  }
+  @media (min-width: @screen-md-min) {
+    width: @container-md + @grid-column-gutter;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg + @grid-column-gutter;
+  }
+
+  margin: 0 auto;
+  overflow: hidden;
+  &:extend(.clearfix all);
+}

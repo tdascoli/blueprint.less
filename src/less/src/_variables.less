@@ -1,16 +1,3 @@
-//=== CORE - Reset
-//
-// todo: add more vars
-
-
-//=== Buttons
-//
-// todo: add button vars
-
-//=== Forms
-//
-// todo: add form vars
-
 //=== Grid
 //
 // todo: define more grid vars
@@ -21,9 +8,68 @@
 @grid-column-image: 'grid.png';
 @width: (@grid-columns * @grid-column-width) + (@grid-columns * @grid-column-gutter) - @grid-column-gutter;
 
-@box_background: #E5ECF9; //E5ECF9
+@box_background: #E5ECF9;
 
-// todo: responsive or not---
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+// Note: Deprecated @screen-xs and @screen-phone as of v3.0.1
+@screen-xs:                  480px;
+@screen-xs-min:              @screen-xs;
+@screen-phone:               @screen-xs-min;
+
+// Small screen / tablet
+// Note: Deprecated @screen-sm and @screen-tablet as of v3.0.1
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+@screen-tablet:              @screen-sm-min;
+
+// Medium screen / desktop
+// Note: Deprecated @screen-md and @screen-desktop as of v3.0.1
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+@screen-desktop:             @screen-md-min;
+
+// Large screen / wide desktop
+// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+@screen-lg-desktop:          @screen-lg-min;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+@container-tablet:             710px; // 20px / 10px
+//** For `@screen-sm-min` and up.
+@container-sm:                 @container-tablet;
+
+// Medium screen / desktop
+@container-desktop:            950px; // original blueprint
+//** For `@screen-md-min` and up.
+@container-md:                 @container-desktop;
+
+// Large screen / wide desktop
+@container-large-desktop:      1142px; // 38px / 10px
+//** For `@screen-lg-min` and up.
+@container-lg:                 @container-large-desktop;
+
+
+//=== Buttons
+//
+// todo: add button vars
+
+//=== Forms
+//
+// todo: add form vars
 
 
 //=== Typography
@@ -59,4 +105,3 @@
 @a-hover-color: @a-color;
 @quiet-color: @font-color + #444;
 @loud-color: #000;
-@default_fonts: "Helvetica Neue", Arial, Helvetica, sans-serif;

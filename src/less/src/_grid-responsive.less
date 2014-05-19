@@ -1,0 +1,139 @@
+//
+// Grid system
+// --------------------------------------------------
+
+/* Use this class on any .span / container to see the grid. */
+.showgrid {
+  //[class^=span] {
+  //background-color: #ffd324;
+  background: url(@grid-column-image) repeat scroll 0% 0% transparent;
+}
+
+
+// STATIC RESPONSIVE
+// todo xs static responsive
+
+.make-blueprint-columns();
+
+.make-grid();
+
+// FLEXIBLE RESPONSIVE
+
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+
+//.make-grid(xs);
+
+
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+
+@media (min-width: @screen-sm-min) {
+  .make-flex-grid(sm);
+}
+
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+@media (min-width: @screen-md-min) {
+  .make-flex-grid(md);
+}
+
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: @screen-lg-min) {
+  .make-flex-grid(lg);
+}
+
+// other
+
+/* The last grid-column-width in a row needs this class. */
+.span-@{grid-columns}, .last { margin-right: 0; }
+
+/* Use these classes to set the width of an input. */
+.input_span (@level: 1) {
+  border-left-width: 1px;
+  border-right-width: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: ((@level * @grid-column-width) + ((@level - 1) * 10px) - 12px);
+}
+
+/* Border on right hand side of a grid-column-width. */
+.border () {
+  padding-right: 4px;
+  margin-right: 5px;
+  border-right: 1px solid #eee;
+}
+
+/* Border with more whitespace, spans one grid-column-width. */
+.colborder () {
+  padding-right: 24px;
+  margin-right: 25px;
+  border-right: 1px solid #eee;
+}
+
+/* Use these classes on an element to push it into the
+next grid-column-width, or to pull it into the previous grid-column-width.  */
+
+.pull (@level: 1) {
+  margin-left: (@grid-column-width * @level * -1) + (@level * -10px);
+  float: left;
+  position:relative;
+}
+
+.push (@level: 1) {
+  margin: 0 ((@grid-column-width * @level * -1) + (@level * -10px)) unit(@line-height-base, em) ((@grid-column-width * @level) + (@level * 10px));
+  float: right;
+  position:relative;
+}
+
+/* Misc classes and elements
+-------------------------------------------------------------- */
+
+/* In case you need to add a gutter above/below an element */
+.prepend-top {
+  margin-top:unit(@line-height-base, em)
+}
+.append-bottom {
+  margin-bottom:unit(@line-height-base, em);
+}
+
+/* Use a .box to create a padded box inside a grid-column-width.  */
+.box {
+  padding: unit(@line-height-base, em);
+  margin-bottom: unit(@line-height-base, em);
+  background: @box_background;
+}
+
+/* Use this to create a horizontal ruler across a grid-column-width. */
+hr {
+  background: #ddd;
+  color: #ddd;
+  clear: both;
+  float: none;
+  width: 100%;
+  height: .1em;
+  margin: 0 0 1.45em;
+  border: none;
+}
+
+hr.space {
+  background: #fff;
+  color: #fff;
+  visibility: hidden;
+}
+
+/* Regular clearing
+   apply to grid-column-width that should drop below previous ones. */
+
+.clear { clear:both; }
