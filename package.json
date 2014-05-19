@@ -1,0 +1,33 @@
+{
+  "name": "blueprint.less",
+  "version": "0.0.1",
+  "description": "resposnive blueprintcss written in less",
+  "author": "tdascoli",
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tdascoli/blueprint.less.git"
+  },
+  "dependencies": {
+    "colors": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-qunit": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-compress": "*",
+    "grunt-push-release": "*",
+    "grunt-docular": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-less": "*",
+    "bower": "*"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
+}
