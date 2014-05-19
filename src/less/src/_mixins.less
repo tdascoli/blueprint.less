@@ -1,0 +1,102 @@
+/* Sets up basic grid floating and grid-column-gutter. */
+.column () {
+  float: left;
+  margin-right: @grid-column-gutter;
+}
+
+.column-list(@type) when (@type = push) {
+  float:left;
+  position:relative;
+}
+.column-list(@type) when (@type = pull) {
+  float:left;
+  position:relative;
+}
+.column-list(@type) when (@type = span) {
+  .column();
+}
+
+.calc-blueprint-column(@index, @type) when (@type = span) and (@index > 0) {
+  .span-@{index} {
+    width: (@index * @grid-column-width) + ((@index - 1) * @grid-column-gutter);
+  }
+}
+.calc-blueprint-column(@index, @type) when (@type = push) {
+  .push-@{index} {
+    margin: 0 -((@index * @grid-column-width) + (@index * @grid-column-gutter)) unit(@line-height-base, em) ((@index * @grid-column-width) + (@index * @grid-column-gutter));
+  }
+}
+.calc-blueprint-column(@index, @type) when (@type = pull) {
+  .pull-@{index} {
+    margin-left: -((@index * @grid-column-width) + (@index * @grid-column-gutter));
+  }
+}
+.calc-blueprint-column(@index, @type) when (@type = append) {
+  .append-@{index} {
+    padding-right: (@index * @grid-column-width) + (@index * @grid-column-gutter);
+  }
+}
+.calc-blueprint-column(@index, @type) when (@type = prepend) {
+  .prepend-@{index} {
+    padding-left: (@index * @grid-column-width) + (@index * @grid-column-gutter);
+  }
+}
+
+// Basic looping in LESS
+.loop-blueprint-columns(@index, @type) when (@index >= 0) {
+  .calc-blueprint-column(@index, @type);
+  // next iteration
+  .loop-blueprint-columns((@index - 1), @type);
+}
+
+.make-blueprint-grid(){
+  .loop-blueprint-columns(@grid-columns, span);
+  .loop-blueprint-columns(@grid-columns, pull);
+  .loop-blueprint-columns(@grid-columns, push);
+  .loop-blueprint-columns(@grid-columns, append);
+  .loop-blueprint-columns(@grid-columns, prepend);
+}
+
+.loop-blueprint-list(@type) {
+  // Common styles for all sizes of grid columns, widths 1-12
+  .col(@index,@type) when (@index = 1) { // initial
+    @item: ~".@{type}-@{index}";
+    .col((@index + 1), @type, @item);
+  };
+  .col(@index, @type, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+    @item: ~".@{type}-@{index}";
+    .col((@index + 1), @type, ~"@{list}, @{item}");
+  };
+  .col(@index, @type, @list) when (@index > @grid-columns) { // terminal
+@{list} {
+  .column-list(@type);
+}
+  };
+  .col(1,@type); // kickstart it
+}
+
+.make-blueprint-columns() {
+  .loop-blueprint-list(span);
+  .loop-blueprint-list(pull);
+  .loop-blueprint-list(push);
+}
+
+/*
+.make-grid-columns() {
+  // Common styles for all sizes of grid columns, widths 1-12
+  .col(@index) when (@index = 1) { // initial
+    @item: ~".span-xs-@{index}, .span-sm-@{index}, .span-md-@{index}, .span-lg-@{index}";
+    .col((@index + 1), @item);
+  };
+  .col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+    @item: ~".span-xs-@{index}, .span-sm-@{index}, .span-md-@{index}, .span-lg-@{index}";
+    .col((@index + 1), ~"@{list}, @{item}");
+  };
+  .col(@index, @list) when (@index > @grid-columns) { // terminal
+    @{list} {
+      .column();
+    }
+  };
+  .col(1); // kickstart it
+}
+*/

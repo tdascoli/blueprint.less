@@ -14,7 +14,6 @@
                 '*/\n',
 
             // Task configurations.
-
             clean: {
                 all: ['dist', 'build'],
                 dist: ['dist'],
@@ -43,7 +42,8 @@
                     files: {
                         "dist/css/ie.css": ["src/less/ie.less"],
                         "dist/css/print.css": ["src/less/print.less"],
-                        "dist/css/blueprint.css": ["src/less/blueprint.less"]
+                        "dist/css/blueprint.css": ["src/less/blueprint.less"],
+                        "dist/css/blueprint.responsive.css": ["src/less/blueprint.responsive.less"]
                     }
                 },
                 development: {
@@ -54,7 +54,8 @@
                     files: {
                         "dist/css/ie.css": ["src/less/ie.less"],
                         "dist/css/print.css": ["src/less/print.less"],
-                        "dist/css/blueprint.css": ["src/less/blueprint.less"]
+                        "dist/css/blueprint.css": ["src/less/blueprint.less"],
+                        "dist/css/blueprint.responsive.css": ["src/less/blueprint.responsive.less"]
                     }
                 }
             },

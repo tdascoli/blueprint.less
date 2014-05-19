@@ -3,13 +3,27 @@
 
 <html lang="en">
   <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Blueprint Grid Tests</title>
 
     <!-- Framework CSS -->
-    <link rel="stylesheet" href="../../blueprint/screen.css" type="text/css" media="screen, projection">
-    <link rel="stylesheet" href="../../blueprint/print.css" type="text/css" media="print">
-    <!--[if lt IE 8]><link rel="stylesheet" href="../../blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet/less" type="text/css" href="/src/less/blueprint.less"/>
+    <script type="text/javascript">
+      less = {
+          env: "development",
+          async: false,
+          fileAsync: false,
+          poll: 1000,
+          functions: {},
+          dumpLineNumbers: "comments",
+          relativeUrls: false,
+          rootpath: "/src/less/"
+      };
+    </script>
+    <script type="text/javascript" src="/lib/less/dist/less-1.7.0.min.js"></script>
+    <link rel="stylesheet" href="/demo/master/blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]><link rel="stylesheet" href="/demo/master/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
   </head>
   <body>
 
@@ -148,7 +162,7 @@
         <div class="span-2 last"><img src="test-small.jpg" class="top pull-3"></div>
         <div class="span-10"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
         <div class="span-2 last"><img src="test-small.jpg" class="top pull-4"></div>
-        <div class="span-10"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
+        <div class="span-10"><p>Lorem ipsum parts sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p></div>
         <div class="span-2 last"><img src="test-small.jpg" class="top pull-5"></div>
       </div>
       <div class="span-24">

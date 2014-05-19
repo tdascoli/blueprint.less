@@ -6,24 +6,13 @@
 -------------------------------------------------------------- */
 
 // Setup defaults for links and fonts/colors
-/*
-@font-color: #333;
-@a-color: blue;
-@a-hover-color: @a-color;
-@quiet-color: @font-color + #444;
-@loud-color: #000;
-@default_fonts: "Helvetica Neue", Arial, Helvetica, sans-serif;
-*/
 
-/* Default font settings.
-
-   The font-size percentage is of 16px. (0.75 * 16px = 12px) */
 html { font-size:100.01%; }
 body {
-  font-size: 75%;
+  font-size: @font-size-base;
   color: @font-color;
   background: #fff;
-  font-family: @default_fonts;
+  font-family: @font-family-base;
 }
 
 
@@ -32,12 +21,12 @@ body {
 
 h1,h2,h3,h4,h5,h6 { font-weight: normal; color: @font-color; }
 
-h1 { font-size: 3em; line-height: 1; margin-bottom: 0.5em; }
-h2 { font-size: 2em; margin-bottom: 0.75em; }
-h3 { font-size: 1.5em; line-height: 1; margin-bottom: 1em; }
-h4 { font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; }
-h5 { font-size: 1em; font-weight: bold; margin-bottom: 1.5em; }
-h6 { font-size: 1em; font-weight: bold; }
+h1 { font-size: @font-size-h1; line-height: 1; margin-bottom: 0.5em; }
+h2 { font-size: @font-size-h2; margin-bottom: 0.75em; }
+h3 { font-size: @font-size-h3; line-height: 1; margin-bottom: 1em; }
+h4 { font-size: @font-size-h4; line-height: 1.25; margin-bottom: 1.25em; }
+h5 { font-size: @font-size-h5; font-weight: bold; margin-bottom: 1.5em; }
+h6 { font-size: @font-size-h6; font-weight: bold; }
 
 h1 img, h2 img, h3 img,
 h4 img, h5 img, h6 img {
@@ -48,7 +37,7 @@ h4 img, h5 img, h6 img {
 /* Text elements
 -------------------------------------------------------------- */
 
-p           { margin: 0 0 1.5em; }
+p           { margin: 0 0 unit(@line-height-base, em); }
 
 
 /* 
@@ -56,14 +45,14 @@ p           { margin: 0 0 1.5em; }
 	that the text flows around it (usage: <p><img class="left">Text</p>) 
 */
 
-.left        { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
-.right       { float: right; margin: 1.5em 0 1.5em 1.5em; }
+.left        { float: left; margin: unit(@line-height-base, em) unit(@line-height-base, em) unit(@line-height-base, em) 0; padding: 0; }
+.right       { float: right; margin: unit(@line-height-base, em) 0 unit(@line-height-base, em) unit(@line-height-base, em); }
 
 
 a, a:focus{ color: @a-hover-color; text-decoration: underline; }
 a:hover{ color:@a-hover-color; }
 
-blockquote  { margin: 1.5em; color: @quiet-color; font-style: italic; }
+blockquote  { margin: unit(@line-height-base, em); color: @quiet-color; font-style: italic; }
 strong,dfn  { font-weight: bold; }
 em,dfn      { font-style: italic; }
 dfn         { font-weight: bold; }
@@ -71,11 +60,11 @@ sup, sub    { line-height: 0; }
 
 abbr,
 acronym     { border-bottom: 1px dotted @quiet-color; }
-address     { margin: 0 0 1.5em; font-style: italic; }
+address     { margin: 0 0 unit(@line-height-base, em); font-style: italic; }
 del         { color:@quiet-color; }
 
 pre         { margin: 1.5em 0; white-space: pre; }
-pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: 1.5; }
+pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height: @line-height-base; }
 
 
 /* Lists
@@ -83,14 +72,14 @@ pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height:
 
 li ul,
 li ol       { margin: 0; }
-ul, ol      { margin: 0 1.5em 1.5em 0; padding-left: 3.333em; }
+ul, ol      { margin: 0 unit(@line-height-base, em) unit(@line-height-base, em) 0; padding-left: 3.333em; }
 
 ul          { list-style-type: disc; }
 ol          { list-style-type: decimal; }
 
-dl          { margin: 0 0 1.5em 0; }
+dl          { margin: 0 0 unit(@line-height-base, em) 0; }
 dl dt       { font-weight: bold; }
-dd          { margin-left: 1.5em;}
+dd          { margin-left: unit(@line-height-base, em);}
 
 
 /* Tables

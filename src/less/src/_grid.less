@@ -1,21 +1,15 @@
 /* --------------------------------------------------------------
 
    grid.css
-   * Sets up an easy-to-use grid of x columns.
+   * Sets up an easy-to-use grid of x grid-column-widths.
 
-   By default, the grid is 950px wide, with 24 columns
-   spanning 30px, and a 10px margin between columns.
+   By default, the grid is 950px wide, with 24 grid-column-widths
+   spanning 30px, and a 10px grid-column-gutter between grid-column-widths.
 
-   If you need fewer or more columns, namespaces or semantic
+   If you need fewer or more grid-column-widths, namespaces or semantic
    element names, the following
 
 -------------------------------------------------------------- */
-/*
-@width: 960px;
-@column: 30px;
-@margin: 10px;
-@box_background: #E5ECF9;
-*/
 
 
 /* Clearing floats without extra markup
@@ -28,7 +22,7 @@
   width: 100%;
 }
 
-/* Above clearfix hack can cause clipping when you wish to display contents over the container's edge using absolute positioning or negative margins. Old clearfix will live here. */
+/* Above clearfix hack can cause clipping when you wish to display contents over the container's edge using absolute positioning or negative grid-column-gutters. Old clearfix will live here. */
 
 .clearfix (after) {
   display:block;
@@ -43,7 +37,7 @@
   }
 }
 
-/* A container should group all your columns. Above clearfix hack is applied. */
+/* A container should group all your grid-column-widths. Above clearfix hack is applied. */
 .container {
   width: @width;
   margin: 0 auto;
@@ -60,28 +54,20 @@
 }
 
 /* Use this class on any .span / container to see the grid. */
-.showgrid (@grid: 'src/grid.png') {
-  background: url('@{grid}');
+.showgrid {
+  background: url(@grid-column-image) repeat scroll 0% 0% transparent;
 }
 
 
-/* Columns
+/* grid-column-widths
 -------------------------------------------------------------- */
 
-/* Sets up basic grid floating and margin. */
-.column () {
-	float: left;
-	margin-right: @margin;
-}
+.make-blueprint-columns();
 
-/* Use this mixin to set the width of a column. you should avoid @levels wider then @width */
-.span (@level: 1) {
-	.column;
-	width: (@level * @column) + ((@level - 1) * 10px);
-}
+.make-blueprint-grid();
 
-/* The last column in a row needs this class. */
-.last { margin-right: 0; }
+/* The last grid-column-width in a row needs this class. */
+.span-@{grid-columns}, .last { margin-right: 0; }
 
 /* Use these classes to set the width of an input. */
 .input_span (@level: 1) {
@@ -89,48 +75,37 @@
   border-right-width: 1px;
   padding-left: 5px;
   padding-right: 5px;
-  width: ((@level * @column) + ((@level - 1) * 10px) - 12px);
+  width: ((@level * @grid-column-width) + ((@level - 1) * 10px) - 12px);
 }
 
-/* Add these to a column to append empty cols. */
-.append (@level: 1) {
-	padding-right: ((@column * @level) + (@level * 10px));
-}
-
-/* Add these to a column to prepend empty cols. */
-
-.prepend (@level: 1) {
-	padding-left: (@level * @column + (@level - 1) * 10px);
-}
-
-/* Border on right hand side of a column. */
+/* Border on right hand side of a grid-column-width. */
 .border () {
   padding-right: 4px;
   margin-right: 5px;
   border-right: 1px solid #eee;
 }
 
-/* Border with more whitespace, spans one column. */
+/* Border with more whitespace, spans one grid-column-width. */
 .colborder () {
   padding-right: 24px;
-  margin-right: 25px;
+  grid-column-gutter-right: 25px;
   border-right: 1px solid #eee;
 }
 
 
 /* Use these classes on an element to push it into the
-next column, or to pull it into the previous column.  */
+next grid-column-width, or to pull it into the previous grid-column-width.  */
 
 .pull (@level: 1) {
-	margin-left: (@column * @level * -1) + (@level * -10px);
+	margin-left: (@grid-column-width * @level * -1) + (@level * -10px);
 	float: left; 
 	position:relative;
 }
 
 .push (@level: 1) {
-	margin: 0 ((@column * @level * -1) + (@level * -10px)) 1.5em ((@column * @level) + (@level * 10px));
+	margin: 0 ((@grid-column-width * @level * -1) + (@level * -10px)) unit(@line-height-base, em) ((@grid-column-width * @level) + (@level * 10px));
 	float: right; 
-        position:relative;
+    position:relative;
 }
 
 /* Misc classes and elements
@@ -138,20 +113,20 @@ next column, or to pull it into the previous column.  */
 
 /* In case you need to add a gutter above/below an element */
 .prepend-top {
-  margin-top:1.5em;
+  margin-top:unit(@line-height-base, em)
 }
 .append-bottom {
-  margin-bottom:1.5em;
+  margin-bottom:unit(@line-height-base, em);
 }
 
-/* Use a .box to create a padded box inside a column.  */
+/* Use a .box to create a padded box inside a grid-column-width.  */
 .box {
-  padding: 1.5em;
-  margin-bottom: 1.5em;
+  padding: unit(@line-height-base, em);
+  margin-bottom: unit(@line-height-base, em);
   background: @box_background;
 }
 
-/* Use this to create a horizontal ruler across a column. */
+/* Use this to create a horizontal ruler across a grid-column-width. */
 hr {
   background: #ddd;
   color: #ddd;
@@ -170,6 +145,6 @@ hr.space {
 }
 
 /* Regular clearing
-   apply to column that should drop below previous ones. */
+   apply to grid-column-width that should drop below previous ones. */
 
 .clear { clear:both; }

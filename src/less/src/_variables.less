@@ -1,3 +1,7 @@
+//=== CORE - Reset
+//
+// todo: add more vars
+
 
 //=== Buttons
 //
@@ -11,9 +15,12 @@
 //
 // todo: define more grid vars
 
-@width: 960px;
-@column: 30px;
-@margin: 10px;
+@grid-columns: 24;
+@grid-column-width: 30px;
+@grid-column-gutter: 10px;
+@grid-column-image: 'grid.png';
+@width: (@grid-columns * @grid-column-width) + (@grid-columns * @grid-column-gutter) - @grid-column-gutter;
+
 @box_background: #E5ECF9; //E5ECF9
 
 // todo: responsive or not---
@@ -21,6 +28,30 @@
 
 //=== Typography
 //
+//## Font, line-height, and color for body text, headings, and more.
+
+@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+
+@font-size-base:          12px;
+@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+
+@font-size-h1:            3em;
+@font-size-h2:            2em;
+@font-size-h3:            1.5em;
+@font-size-h4:            1.2em;
+@font-size-h5:            1em;
+@font-size-h6:            1em;
+
+//** Unit-less `line-height` for use in components like buttons.
+@line-height-base:        1.5; // bootstrap: 1.428571429 // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+
 // Setup defaults for links and fonts/colors
 
 @font-color: #333;
