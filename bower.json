@@ -19,6 +19,6 @@
         "README.md"
     ],
     "dependencies": {
-
+        "less": "1.7.0"
     }
 }
