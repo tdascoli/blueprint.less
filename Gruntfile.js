@@ -26,8 +26,8 @@
                 main: {
                     files: [
                         // includes files within path
-                        {expand: true, flatten: true, src: ['src/less/grid.png'], dest: 'dist/css/grid.png', filter: 'isFile'},
-                        {expand: true, flatten: true, src: ['src/less/src/icons/*'], dest: 'dist/css/icons/*', filter: 'isFile'}
+                        {expand: true, flatten: true, src: ['src/less/grid.png'], dest: 'dist/css/', filter: 'isFile'},
+                        {expand: true, flatten: true, src: ['src/less/src/icons/*'], dest: 'dist/css/icons/', filter: 'isFile'}
                     ]
                 }
             },
@@ -55,8 +55,8 @@
                         "dist/css/ie.css": ["src/less/ie.less"],
                         "dist/css/print.css": ["src/less/print.less"],
                         "dist/css/blueprint.css": ["src/less/blueprint.less"],
-                        "dist/css/blueprint.responsive.css": ["src/less/blueprint.responsive.less"],
-                        "dist/css/blueprint.plugins.css": ["src/less/blueprint.plugins.less"]
+                        "dist/css/blueprint-responsive.css": ["src/less/blueprint-responsive.less"],
+                        "dist/css/blueprint-plugins.css": ["src/less/blueprint-plugins.less"]
                     }
                 },
                 development: {
@@ -68,8 +68,8 @@
                         "dist/css/ie.css": ["src/less/ie.less"],
                         "dist/css/print.css": ["src/less/print.less"],
                         "dist/css/blueprint.css": ["src/less/blueprint.less"],
-                        "dist/css/blueprint.responsive.css": ["src/less/blueprint.responsive.less"],
-                        "dist/css/blueprint.plugins.css": ["src/less/blueprint.plugins.less"]
+                        "dist/css/blueprint-responsive.css": ["src/less/blueprint-responsive.less"],
+                        "dist/css/blueprint-plugins.css": ["src/less/blueprint-plugins.less"]
                     }
                 }
             },
@@ -130,7 +130,7 @@
         grunt.loadNpmTasks('grunt-contrib-less');
 
         // Default task.
-        grunt.registerTask('default', ['jshint', 'clean:all', 'less:production', 'copy', 'cssmin', 'uglify', 'compress']);
+        grunt.registerTask('default', ['jshint', 'clean:all', 'less:production', 'copy', 'cssmin', 'compress']);
         grunt.registerTask('releasePatch', ['jshint', 'clean:all', 'less:production', 'uglify', 'copy', 'push:patch']);
         grunt.registerTask('releaseMinor', ['jshint', 'clean:all', 'less:production', 'uglify', 'copy', 'less', 'push:minor']);
         grunt.registerTask('releaseMajor', ['jshint', 'clean:all', 'less:production', 'uglify', 'copy', 'less', 'push:major']);
