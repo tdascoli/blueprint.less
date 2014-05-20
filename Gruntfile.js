@@ -103,12 +103,6 @@
                         jshintrc: '.jshintrc'
                     },
                     src: ['src/**/*.js']
-                },
-                test: {
-                    options: {
-                        jshintrc: 'test/.jshintrc'
-                    },
-                    src: ['test/**/*.js']
                 }
             },
             watch: {
@@ -119,10 +113,6 @@
                 src: {
                     files: '<%= jshint.src.src %>',
                     tasks: ['jshint:src']
-                },
-                test: {
-                    files: '<%= jshint.test.src %>',
-                    tasks: ['jshint:test']
                 }
             }
         });
