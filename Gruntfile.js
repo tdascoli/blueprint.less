@@ -19,6 +19,18 @@
                 dist: ['dist'],
                 build: ['build']
             },
+            copy: {
+                options: {
+                    banner: '<%= banner %>'
+                },
+                main: {
+                    files: [
+                        // includes files within path
+                        {expand: true, flatten: true, src: ['src/less/grid.png'], dest: 'dist/css/grid.png', filter: 'isFile'},
+                        {expand: true, flatten: true, src: ['src/less/src/icons/*'], dest: 'dist/css/icons/*', filter: 'isFile'}
+                    ]
+                }
+            },
             cssmin: {
                 options: {
                     banner: '<%= banner %>'
@@ -43,7 +55,8 @@
                         "dist/css/ie.css": ["src/less/ie.less"],
                         "dist/css/print.css": ["src/less/print.less"],
                         "dist/css/blueprint.css": ["src/less/blueprint.less"],
-                        "dist/css/blueprint.responsive.css": ["src/less/blueprint.responsive.less"]
+                        "dist/css/blueprint.responsive.css": ["src/less/blueprint.responsive.less"],
+                        "dist/css/blueprint.plugins.css": ["src/less/blueprint.plugins.less"]
                     }
                 },
                 development: {
@@ -55,7 +68,8 @@
                         "dist/css/ie.css": ["src/less/ie.less"],
                         "dist/css/print.css": ["src/less/print.less"],
                         "dist/css/blueprint.css": ["src/less/blueprint.less"],
-                        "dist/css/blueprint.responsive.css": ["src/less/blueprint.responsive.less"]
+                        "dist/css/blueprint.responsive.css": ["src/less/blueprint.responsive.less"],
+                        "dist/css/blueprint.plugins.css": ["src/less/blueprint.plugins.less"]
                     }
                 }
             },

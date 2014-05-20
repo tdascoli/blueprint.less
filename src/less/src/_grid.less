@@ -41,13 +41,11 @@
 .container {
   width: @width;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 .container(clearfix-after) {
   width: @width;
   margin: 0 auto;
-  overflow: hidden;
   
   /* This will also import the :after rule. */
   .clearfix(after);
@@ -79,14 +77,14 @@
 }
 
 /* Border on right hand side of a grid-column-width. */
-.border () {
+.border {
   padding-right: 4px;
   margin-right: 5px;
   border-right: 1px solid #eee;
 }
 
 /* Border with more whitespace, spans one grid-column-width. */
-.colborder () {
+.colborder {
   padding-right: 24px;
   margin-right: 25px;
   border-right: 1px solid #eee;
