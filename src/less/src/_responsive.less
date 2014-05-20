@@ -6,6 +6,23 @@
 .container {
 
   @media (min-width: @screen-sm-min) {
+    width: @container-sm;
+  }
+  @media (min-width: @screen-md-min) {
+    width: @container-md;
+  }
+  @media (min-width: @screen-lg-min) {
+    width: @container-lg;
+  }
+
+  margin: 0 auto;
+  overflow: hidden;
+  &:extend(.clearfix all);
+}
+
+.container-fluid {
+
+  @media (min-width: @screen-sm-min) {
     width: @container-sm + @grid-column-gutter;
   }
   @media (min-width: @screen-md-min) {
@@ -15,6 +32,13 @@
     width: @container-lg + @grid-column-gutter;
   }
 
+  margin: 0 auto;
+  overflow: hidden;
+  &:extend(.clearfix all);
+}
+
+.container-flexible {
+  width: 100%;
   margin: 0 auto;
   overflow: hidden;
   &:extend(.clearfix all);
