@@ -78,15 +78,13 @@
 
 /* Border on right hand side of a grid-column-width. */
 .border {
-  padding-right: 4px;
-  margin-right: 5px;
+  .make-border(@grid-column-gutter);
   border-right: 1px solid #eee;
 }
 
 /* Border with more whitespace, spans one grid-column-width. */
 .colborder {
-  padding-right: 24px;
-  margin-right: 25px;
+  .make-colborder(@grid-column-gutter, @grid-column-width);
   border-right: 1px solid #eee;
 }
 

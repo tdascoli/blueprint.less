@@ -380,3 +380,23 @@
   .loop-flex-grid-columns(@grid-columns, @class, append);
   .loop-flex-grid-columns(@grid-columns, @class, prepend);
 }
+
+// create border padding/margin
+.make-border(@gutter) {
+  padding-right: floor(@gutter/2) - 1;
+  margin-right: ceil(@gutter/2);
+}
+.make-border(@gutter) when(@gutter = 0) {
+  padding-right: 0px;
+  margin-right: -1px;
+}
+.make-border(@gutter) when(@gutter = 1) {
+  padding-right: 1px;
+  margin-right: -1px;
+}
+
+.make-colborder(@gutter, @width) {
+  @total-width: @width + (2*@gutter);
+  padding-right: floor(@total-width/2) - 1;
+  margin-right: ceil(@total-width/2);
+}
