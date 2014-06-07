@@ -8,6 +8,53 @@
 
 -------------------------------------------------------------- */
 
+/* button - primary */
+.btn,
+.btn-primary {
+  color: #333;
+  background-color: #FFF;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+}
+
+.btn-primary {
+  background-color: @btn-primary-color;
+  -webkit-box-shadow: 0px @btn-depth-width 0px 0px darken(@btn-primary-color, 10%);
+  -moz-box-shadow: 0px @btn-depth-width 0px 0px darken(@btn-primary-color, 10%);
+  box-shadow: 0px @btn-depth-width 0px 0px darken(@btn-primary-color, 10%);
+
+  transition: 0.1s;
+}
+
+.btn-primary:active {
+  -webkit-transform:translate(0, @btn-depth-width);
+  -ms-transform:translate(0, @btn-depth-width);
+  transform:translate(0, @btn-depth-width);
+
+  -webkit-box-shadow:0 0 0 0 rgba(0,0,0,0.5);
+  -moz-box-shadow:0 0 0 0 rgba(0,0,0,0.5);
+  box-shadow:0 0 0 0 rgba(0,0,0,0.5)
+}
+.btn {
+  background-color: @btn-default-color;
+  -webkit-box-shadow: 0px @btn-depth-width 0px 0px darken(@btn-default-color, 10%);
+  -moz-box-shadow: 0px @btn-depth-width 0px 0px darken(@btn-default-color, 10%);
+  box-shadow: 0px @btn-depth-width 0px 0px darken(@btn-default-color, 10%);
+
+  transition: 0.1s;
+}
+
+.btn:active {
+  -webkit-transform:translate(0, @btn-depth-width);
+  -ms-transform:translate(0, @btn-depth-width);
+  transform:translate(0, @btn-depth-width);
+
+  -webkit-box-shadow:0 0 0 0 rgba(0,0,0,0.5);
+  -moz-box-shadow:0 0 0 0 rgba(0,0,0,0.5);
+  box-shadow:0 0 0 0 rgba(0,0,0,0.5)
+}
+
 a.button, button {
   display:block;
   float:left;

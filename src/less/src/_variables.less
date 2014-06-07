@@ -1,10 +1,19 @@
+//=== Core
+//
+
+@gray-darker:  lighten(#000, 13.5%); // #222
+@gray-dark:    lighten(#000, 20%);   // #333
+@gray:         lighten(#000, 33.5%); // #555
+@gray-light:   lighten(#000, 60%);   // #999
+@gray-lighter: lighten(#000, 93.5%); // #eee
+
 //=== Grid
 //
 // todo: define more grid vars
 
 @grid-columns: 24;
-@grid-column-width: 40px;
-@grid-column-gutter: 0px;
+@grid-column-width: 30px;
+@grid-column-gutter: 10px;
 @grid-column-image: 'grid.png';
 @width: (@grid-columns * @grid-column-width) + (@grid-columns * @grid-column-gutter) - @grid-column-gutter;
 
@@ -66,6 +75,10 @@
 //=== Buttons
 //
 // todo: add button vars
+
+@btn-default-color:  @gray;
+@btn-primary-color:  #428bca;
+@btn-depth-width:    4px;
 
 //=== Forms
 //
