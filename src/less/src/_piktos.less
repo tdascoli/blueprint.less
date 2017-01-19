@@ -1,0 +1,161 @@
+/*------------------------------------*\
+  #PIKTOS
+\*------------------------------------*/
+
+.pikto-before::before {
+  content: url('@{pikto-base-url}/piktos/pikto-frage.png');
+  margin-right: 0.2em;
+  vertical-align: middle;
+}
+
+.pikto-after::after,
+.pikto::after {
+  content: url('@{pikto-base-url}/piktos/pikto-frage.png');
+  margin-left: 0.2em;
+  vertical-align: middle;
+}
+
+
+.pikto--default.pikto-before::before,
+.pikto--default.pikto-after::after{
+  content: url('@{pikto-base-url}/piktos/pikto-frage.png');
+}
+
+.pikto--ai.pikto-before::before,
+.pikto--ai.pikto-after::after,
+.pikto[href$='.ai']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-ai.png');
+}
+
+.pikto--audio.pikto-before::before,
+.pikto--audio.pikto-after::after,
+.pikto[href$='.wav']::after,
+.pikto[href$='.mp3']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-audio.png');
+}
+
+.pikto--image.pikto-before::before,
+.pikto--image.pikto-after::after {
+  content: url('@{pikto-base-url}/piktos/pikto-bild.png');
+}
+
+.pikto--mail.pikto-before::before,
+.pikto--mail.pikto-after::after,
+.pikto[href^='mailto:']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-brief.png');
+}
+
+.pikto--emf.pikto-before::before,
+.pikto--emf.pikto-after::after,
+.pikto[href$='.emf']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-emf.png');
+}
+
+.pikto--eps.pikto-before::before,
+.pikto--eps.pikto-after::after,
+.pikto[href$='.eps']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-eps.png');
+}
+
+.pikto--excel.pikto-before::before,
+.pikto--excel.pikto-after::after,
+.pikto[href$='.xls']::after,
+.pikto[href$='.xlsx']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-excel.png');
+}
+
+.pikto--video.pikto-before::before,
+.pikto--video.pikto-after::after,
+.pikto[href$='.avi']::after,
+.pikto[href$='.flv']::after,
+.pikto[href$='.mpg']::after,
+.pikto[href$='.mpeg']::after,
+.pikto[href$='.wmv']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-film.png');
+}
+
+.pikto--gif.pikto-before::before,
+.pikto--gif.pikto-after::after,
+.pikto[href$='.gif']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-gif.png');
+}
+
+.pikto--indd.pikto-before::before,
+.pikto--indd.pikto-after::after,
+.pikto[href$='.indd']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-indd.png');
+}
+
+.pikto--link-intern.pikto-before::before,
+.pikto--link-intern.pikto-after::after,
+.pikto[href^='http']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-linkintern.png');
+}
+
+.pikto--link.pikto-before::before,
+.pikto--link.pikto-after::after,
+.pikto[target='_blank']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-internet.png');
+}
+
+.pikto--jpg.pikto-before::before,
+.pikto--jpg.pikto-after::after,
+.pikto[href$='.jpg']::after,
+.pikto[href$='.jpeg']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-jpg.png');
+}
+
+.pikto--pdf.pikto-before::before,
+.pikto--pdf.pikto-after::after,
+.pikto[href$='.pdf']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-pdf.png');
+}
+
+.pikto--png.pikto-before::before,
+.pikto--png.pikto-after::after,
+.pikto[href$='.png']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-png.png');
+}
+
+.pikto--ppt.pikto-before::before,
+.pikto--ppt.pikto-after::after,
+.pikto[href$='.ppt']::after,
+.pikto[href$='.pptx']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-powerpoint.png');
+}
+
+.pikto--psd.pikto-before::before,
+.pikto--psd.pikto-after::after,
+.pikto[href$='.psd']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-psd.png');
+}
+
+.pikto--qt.pikto-before::before,
+.pikto--qt.pikto-after::after {
+  content: url('@{pikto-base-url}/piktos/pikto-quicktime.png');
+}
+
+.pikto--swf.pikto-before::before,
+.pikto--swf.pikto-after::after,
+.pikto[href$='.swf']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-swf.png');
+}
+
+.pikto--tif.pikto-before::before,
+.pikto--tif.pikto-after::after,
+.pikto[href$='.tif']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-tif.png');
+}
+
+.pikto--word.pikto-before::before,
+.pikto--word.pikto-after::after,
+.pikto[href$='.doc']::after,
+.pikto[href$='.docx']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-word.png');
+}
+
+.pikto--zip.pikto-before::before,
+.pikto--zip.pikto-after::after,
+.pikto[href$='.zip']::after {
+  content: url('@{pikto-base-url}/piktos/pikto-zip.png');
+}

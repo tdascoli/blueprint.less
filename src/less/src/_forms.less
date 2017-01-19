@@ -1,112 +1,131 @@
-/* --------------------------------------------------------------
-
-   forms.css
-   * Sets up some default styling for forms
-   * Gives you classes to enhance your forms
-
-   Usage:
-   * For text fields, use class .title or .text
-   * For inline forms, use .inline (even when using columns)
-
--------------------------------------------------------------- */
-
-label       { font-weight: bold; }
-fieldset    { padding:1.4em; margin: 0 0 1.5em 0; border: 1px solid #ccc; }
-legend      { font-weight: bold; font-size:1.2em; }
-
-
-/* Form fields
--------------------------------------------------------------- */
-
-input[type=text], input[type=password],
-input.text, input.title,
-textarea, select {
-  background-color:#fff;
-  border:1px solid #bbb;
+/* form */
+input[type='text'] {
+  width: 390px;
+  padding: 0 5px;
 }
-input[type=text]:focus, input[type=password]:focus,
-input.text:focus, input.title:focus,
-textarea:focus, select:focus {
-  border-color:#666;
+.pifa-field-lbl {
+  display: inline-block;
+  width: 110px;
+  text-align: right;
 }
-
-input[type=text], input[type=password],
-input.text, input.title,
-textarea, select {
-  margin:0.5em 0;
+.pifa-field-2 .pifa-field-lbl {
+  float: left;
 }
-
-input.text,
-input.title   { width: 300px; padding:5px; }
-input.title   { font-size:1.5em; }
-textarea      { width: 390px; height: 250px; padding:5px; }
-
-input[type=checkbox], input[type=radio],
-input.checkbox, input.radio {
-  position:relative; top:.25em;
+.pifa-field-17.full-row .pifa-field-lbl,
+.pifa-field-5.full-row .pifa-field-lbl {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.pifa-field-5.full-row {
+  margin-bottom: 10px;
+}
+.pifa-field-5.full-row .pifa-field-lbl {
+  font-size: 10px;
+  line-height: 1.5em;
+  color: #FF6600;
+  text-transform: normal;
+  margin: 10px 0 0 0;
+  text-align: left;
+}
+.pifa-field-5.full-row .checkbox_wrapper {
+  padding-left: 120px;
+  margin: 5px 0;
+}
+.checkbox_wrapper input {
+  float: left;
+}
+.checkbox_wrapper label {
+  margin-left: 20px;
+  display: inline-block;
+  width: 390px;
 }
 
-form.inline { line-height:3; }
-form.inline p { margin-bottom:0; }
+// ORIGINAL
+
+/* ==== Example CSS for modules using a PIFA form ==== */
+
+/* == Positioning labels beneath their form fields ==
+All labels should be displayed left of their form fields.
+The surrounding division has to clear the floating though. */
+
+.pifa-form div {clear: both;}
+.pifa-form label {float: left;}
+.pifa-form label {width: 200px;} /* optionally set a common label width */
+
+/* == Styling fields according to their field types ==
+In order to style fields according to their field types a class pifa-field-<n>
+is set to all form fields where <n> is its type id. */
+
+/* INPUTTEXT */
+.pifa-field-1 {}
+
+/* TEXTAREA */
+.pifa-field-2 {}
+
+/* INPUTPASSWORD */
+.pifa-field-3 {}
+
+/* INPUTRADIO */
+.pifa-field-4 {}
+
+/* INPUTCHECKBOX */
+.pifa-field-5 {}
+
+/* SELECT */
+.pifa-field-6 {}
+
+/* SELECTMULTI */
+.pifa-field-7 {}
+
+/* DATEPICKER */
+.pifa-field-8 {}
+
+/* INPUTFILE */
+.pifa-field-9 {}
+
+/* PROCESSBAR */
+.pifa-field-10 {}
+
+/* SLIDER */
+.pifa-field-11 {}
+
+/* CAPTCHA */
+/*.pifa-field-12 {}*/
+
+/* BUTTONSUBMIT */
+.pifa-field-13 {}
+
+/* BUTTONRESET */
+.pifa-field-14 {}
+
+/* BUTTON */
+.pifa-field-15 {}
+
+/* MATRIX */
+.pifa-field-16 {}
+
+/* PARA */
+.pifa-field-17 {}
+
+/* INPUTHIDDEN */
+.pifa-field-18 {}
+
+/* BUTTONIMAGE */
+.pifa-field-21 {}
 
 
-/* Success, notice and error boxes
--------------------------------------------------------------- */
+/* == Styling obligatory fields  ==
+The class pifa-obligatory is set to all divisions containing an obligatory field.
+In this case ' *' is appended to any label describing an obligatory field.
+Unfortunately this doesn't seem to work in IE though. */
 
-.error,
-.notice,
-.success    { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd; }
+div.pifa-obligatory label:after {content: ' *'}
 
-.error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
-.notice     { background: #FFF6BF; color: #514721; border-color: #FFD324; }
-.success    { background: #E6EFC2; color: #264409; border-color: #C6D880; }
-.error a    { color: #8a1f11; }
-.notice a   { color: #514721; }
-.success a  { color: #264409; }
+/* == Styling fields with erroneous data  ==
+The class pifa-error is set to all divisions containing a field with erroneous
+data. */
 
-/* Defaults for form lists 
---------------------------------------------------------------- */
-form {
-	
-	padding-right: 10px;
-	
-	ol {
-		
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		
-		li {
-			
-			padding: 0.5em 0;
-			
-			label, input, select {
-				display: block;
-				margin: 0.1em 0 !important;
-			}
-			
-			input, select, textarea {
-				padding: 0.5em;
-				font-size: 1em;
-			}
-		}
-		
-		ol {
-			
-			display: block;
-			clear: both;
-			overflow: auto;
-			margin: -0.5em 0;
-			
-			li {
-				
-				float: left;
-				margin: 0 1em 0 0;
-				
-				label, input {
-					display: block
-				}
-			}
-		}
-	}
-}
+div.pifa-error {border: 1px solid red;}

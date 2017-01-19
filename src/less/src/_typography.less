@@ -11,14 +11,13 @@ html {
 body {
   font-size: @font-size-base;
   color: @text-color;
-  background: @body-bg;
   font-family: @font-family-base;
+  line-height: @line-height-computed;
 }
 
 // HEADINGS
 h1, h2, h3, h4, h5, h6 {
   font-weight:normal;
-  color: @header-color;
 }
 h1 { font-size:@font-size-h1;line-height:1;margin-bottom:0.5em;}
 h2 { font-size:@font-size-h2;margin-bottom:0.75em;}
@@ -30,73 +29,7 @@ h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
   margin:0;
 }
 
-// PARAGRAPHS
 p {
-  margin:0 0 unit(@line-height-base, em);
+  -webkit-margin-before: @paragraph-margin;
+  -webkit-margin-after: 0;
 }
-.left {
-  float:left !important;
-}
-p .left {
-  margin:unit(@line-height-base, em) unit(@line-height-base, em) unit(@line-height-base, em) 0;
-  padding:0;
-}
-.right {
-  float:right !important;
-}
-p .right {
-  margin:unit(@line-height-base, em) 0 unit(@line-height-base, em) unit(@line-height-base, em);
-  padding:0;
-}
-
-// LINKS
-a:focus, a:hover {
-  color: @link-hover-color;
-}
-a {
-  color: @link-color;
-  text-decoration: @link-decoration;
-}
-
-// QUOTES, ADDRESS
-blockquote {margin:unit(@line-height-base, em);color:#666;font-style:italic;}
-strong, dfn {font-weight:bold;}
-em, dfn {font-style:italic;}
-sup, sub {line-height:0;}
-abbr, acronym {border-bottom:1px dotted #666;}
-address {margin:0 0 unit(@line-height-base, em);font-style:italic;}
-del {color:#666;}
-pre {margin:unit(@line-height-base, em) 0;white-space:pre;}
-pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:@line-height-base;}
-
-// LISTS
-li ul, li ol {margin:0;}
-ul, ol {margin:0 unit(@line-height-base, em) unit(@line-height-base, em) 0;padding-left:unit(@line-height-base, em);}
-ul {list-style-type:disc;}
-ol {list-style-type:decimal;}
-dl {margin:0 0 unit(@line-height-base, em) 0;}
-dl dt {font-weight:bold;}
-dd {margin-left:unit(@line-height-base, em);}
-
-// TABLES
-table {margin-bottom:1.4em;width:100%;}
-th {font-weight:bold;}
-thead th {background:#c3d9ff;}
-th, td, caption {padding:4px 10px 4px 5px;}
-tbody tr:nth-child(even) td, tbody tr.even td {background:#e5ecf9;}
-tfoot {font-style:italic;}
-
-// MISC
-caption {background:#eee;}
-.small {font-size:.8em;margin-bottom:1.875em;line-height:1.875em;}
-.large {font-size:1.2em;line-height:2.5em;margin-bottom:1.25em;}
-.hide {display:none;}
-.quiet {color:#666;}
-.loud {color:#000;}
-.highlight {background:#ff0;}
-.added {background:#060;color:#fff;}
-.removed {background:#900;color:#fff;}
-.first {margin-left:0;padding-left:0;}
-.last {margin-right:0;padding-right:0;}
-.top {margin-top:0;padding-top:0;}
-.bottom {margin-bottom:0;padding-bottom:0;}

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="blueprint.less">
+    <meta name="author" content="tdascoli">
+
+    <title>blueprint.less</title>
+
+    <!-- Custom styles for this template -->
+    <link href="example.css" rel="stylesheet">
+
+    <!-- LESS -->
+    <link rel="stylesheet/less" type="text/css" href="../src/less/blueprint.less"/>
+    <!-- set options before less.js script -->
+    <script>
+        less = {
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            rootpath: "./"
+        };
+    </script>
+    <script src="../lib/less/dist/less.min.js"></script>
+</head>
+
+<body>
+
+<div class="toolbar">
+    <a id="hamburger" class="c-hamburger c-hamburger--htx">
+        <span>toggle menu</span>
+    </a>
+</div>
+
+<div class="container">
+    <h1>blueprint.less</h1>
+
+    <p>Welcome to the Blueprint test pages. The HTML files below test most HTML elements, as well as most classes
+        provided
+        by Blueprint.</p>
+</div>
+
+<h2>grid.css</h2>
+<div class="container showgrid">
+    <div class="row">
+        <div class="span-8">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="span-8">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="span-8 last">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span-6 append-1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="span-6 append-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="span-6 append-3 last">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span-6 prepend-1">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="span-6 prepend-2">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="span-6 prepend-3 last">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+
+        <div class="span-1 prepend-1"><p>1</p></div>
+        <div class="span-1 prepend-2"><p>2</p></div>
+        <div class="span-1 prepend-3"><p>3</p></div>
+        <div class="span-1 prepend-4"><p>4</p></div>
+        <div class="span-1 prepend-5"><p>5</p></div>
+        <div class="span-1 prepend-3 last"><p>3</p></div>
+
+    </div>
+    <div class="row">
+
+        <div class="span-1 append-1"><p>1</p></div>
+        <div class="span-1 append-2"><p>2</p></div>
+        <div class="span-1 append-3"><p>3</p></div>
+        <div class="span-1 append-4"><p>4</p></div>
+        <div class="span-1 append-5"><p>5</p></div>
+        <div class="span-1 append-3 last"><p>3</p></div>
+
+    </div>
+    <div class="row">
+
+        <div class="span-1 border"><p>1</p></div>
+        <div class="span-1 border"><p>2</p></div>
+        <div class="span-1 border"><p>3</p></div>
+        <div class="span-1 border"><p>4</p></div>
+        <div class="span-1 border"><p>5</p></div>
+        <div class="span-1 border"><p>6</p></div>
+        <div class="span-1 border"><p>7</p></div>
+        <div class="span-1 border"><p>8</p></div>
+        <div class="span-1 border"><p>9</p></div>
+        <div class="span-1 border"><p>10</p></div>
+        <div class="span-1 border"><p>11</p></div>
+        <div class="span-1 border"><p>12</p></div>
+        <div class="span-1 border"><p>13</p></div>
+        <div class="span-1 border"><p>14</p></div>
+        <div class="span-1 border"><p>15</p></div>
+        <div class="span-1 border"><p>16</p></div>
+        <div class="span-1 border"><p>17</p></div>
+        <div class="span-1 border"><p>18</p></div>
+        <div class="span-1 border"><p>19</p></div>
+        <div class="span-1 border"><p>20</p></div>
+        <div class="span-1 border"><p>21</p></div>
+        <div class="span-1 border"><p>22</p></div>
+        <div class="span-1 border"><p>23</p></div>
+        <div class="span-1 last"><p>24</p></div>
+
+    </div>
+    <div class="row">
+
+        <div class="span-4"><p>1</p></div>
+        <div class="span-4"><p>2</p></div>
+        <div class="span-4"><p>3</p></div>
+        <div class="span-4"><p>4</p></div>
+        <div class="span-4"><p>5</p></div>
+        <div class="span-4 last"><p>6</p></div>
+
+    </div>
+    <div class="row">
+
+        <div class="prepend-23 span-1 last"><p>24</p></div>
+
+    </div>
+    <div class="row">
+
+        <div class="prepend-1 span-1"><p>2</p></div>
+        <div class="prepend-20 span-1 append-1 last"><p>23</p></div>
+
+    </div>
+
+    <hr>
+</div>
+
+<h2>forms.css</h2>
+
+<h2>piktos.css</h2>
+<div class="container">
+
+    <p>
+        <code>pikto-before</code> or <code>pikto-after</code>
+    </p>
+
+    <div class="row">
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--ai pikto-before"></span>
+            <br />
+            <small><code>pikto--ai</code></small>
+            <br />
+            <small><code>pikto[href$='.ai']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--audio pikto-before"></span>
+            <br />
+            <small><code>pikto--audio</code></small>
+            <br />
+            <small><code>pikto[href$='.wav']<br />pikto[href$='.mp3']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--image pikto-before"></span>
+            <br />
+            <small><code>pikto--image</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--mail pikto-before"></span>
+            <br />
+            <small><code>pikto--mail</code></small>
+            <br />
+            <small><code>pikto[href^='mailto:']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--emf pikto-before"></span>
+            <br />
+            <small><code>pikto--emf</code></small>
+            <br />
+            <small><code>pikto[href$='.emf']</code></small>
+        </div>
+        <div class="span-4 last pikto-thumbnail">
+            <span class="pikto--eps pikto-before"></span>
+            <br />
+            <small><code>pikto--eps</code></small>
+            <br />
+            <small><code>pikto[href$='.eps']</code></small>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--excel pikto-before"></span>
+            <br />
+            <small><code>pikto--excel</code></small>
+            <br />
+            <small><code>pikto[href$='.xls']<br />pikto[href$='.xlsx']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--video pikto-before"></span>
+            <br />
+            <small><code>pikto--video</code></small>
+            <br />
+            <small><code>pikto[href$='.avi']<br />
+                pikto[href$='.flv']<br />
+                pikto[href$='.mpg']<br />
+                pikto[href$='.mpeg']<br />
+                pikto[href$='.wmv']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--gif pikto-before"></span>
+            <br />
+            <small><code>pikto--gif</code></small>
+            <br />
+            <small><code>pikto[href$='.gif']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--indd pikto-before"></span>
+            <br />
+            <small><code>pikto--indd</code></small>
+            <br />
+            <small><code>pikto[href$='.indd']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--link-intern pikto-before"></span>
+            <br />
+            <small><code>pikto--link-intern</code></small>
+            <br />
+            <small><code>pikto[href^='http']</code></small>
+        </div>
+        <div class="span-4 last pikto-thumbnail">
+            <span class="pikto--link pikto-before"></span>
+            <br />
+            <small><code>pikto--link</code></small>
+            <br />
+            <small><code>pikto[target='_blank']</code></small>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--jpg pikto-before"></span>
+            <br />
+            <small><code>pikto--jpg</code></small>
+            <br />
+            <small><code>pikto[href$='.jpg']<br />pikto[href$='.jpeg']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--pdf pikto-before"></span>
+            <br />
+            <small><code>pikto--pdf</code></small>
+            <br />
+            <small><code>pikto[href$='.pdf']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--png pikto-before"></span>
+            <br />
+            <small><code>pikto--png</code></small>
+            <br />
+            <small><code>pikto[href$='.png']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--ppt pikto-before"></span>
+            <br />
+            <small><code>pikto--ppt</code></small>
+            <br />
+            <small><code>pikto[href$='.ppt']<br />pikto[href$='.pptx']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--psd pikto-before"></span>
+            <br />
+            <small><code>pikto--psd</code></small>
+            <br />
+            <small><code>pikto[href$='.psd']</code></small>
+        </div>
+        <div class="span-4 last pikto-thumbnail">
+            <span class="pikto--qt pikto-before"></span>
+            <br />
+            <small><code>pikto--qt</code></small>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--swf pikto-before"></span>
+            <br />
+            <small><code>pikto--swf</code></small>
+            <br />
+            <small><code>pikto[href$='.swf']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--tif pikto-before"></span>
+            <br />
+            <small><code>pikto--tif</code></small>
+            <br />
+            <small><code>pikto[href$='.tif']</code></small>
+        </div>
+        <div class="span-4 pikto-thumbnail">
+            <span class="pikto--word pikto-before"></span>
+            <br />
+            <small><code>pikto--word</code></small>
+            <br />
+            <small><code>pikto[href$='.doc']<br />pikto[href$='.docx']</code></small>
+        </div>
+        <div class="span-4 last pikto-thumbnail">
+            <span class="pikto--zip pikto-before"></span>
+            <br />
+            <small><code>pikto--zip</code></small>
+            <br />
+            <small><code>pikto[href$='.zip']</code></small>
+        </div>
+    </div>
+
+</div>
+
+<h2>golden-ratio.css</h2>
+<div class="container">
+
+    <div class="golden-ratio--row">
+
+        <div class="row--tall gold">
+            <p>tall</p>
+        </div>
+
+        <div class="row--small" style="height: 36px;">
+
+            <div class="golden-ratio--column">
+
+                <div class="column--small black">
+
+                </div>
+                <div class="column--tall gold">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="container" style="height: 36px;">
+
+    <div class="golden-ratio--column">
+
+        <div class="column--small black">
+
+        </div>
+        <div class="column--tall gold">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!--  SHOWGRID -->
+<div class="grid hide-grid" id="grid">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="box">
+    <p>For more information and help, try these resources:</p>
+    <ul class="bottom">
+        <li><a href="http://blueprintcss.org">The Blueprint home page</a></li>
+        <li><a href="http://github.com/joshuaclayton/blueprint-css/wikis/home">The Blueprint Wiki</a></li>
+        <li><a href="http://groups.google.com/group/blueprintcss">The Blueprint mailing list</a></li>
+    </ul>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="scripts/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<!-- example.js -->
+<script src="example.js"></script>
+
+</body>
+</html>

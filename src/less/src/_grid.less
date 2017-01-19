@@ -1,146 +1,61 @@
-/* --------------------------------------------------------------
+/** GRID
 
-   grid.css
-   * Sets up an easy-to-use grid of x grid-column-widths.
+  -basic concept-
 
-   By default, the grid is 950px wide, with 24 grid-column-widths
-   spanning 30px, and a 10px grid-column-gutter between grid-column-widths.
+  ROW
+    SPAN-X
+    SPAN-X LAST
+  /ROW
 
-   If you need fewer or more grid-column-widths, namespaces or semantic
-   element names, the following
+  OR/AND
 
--------------------------------------------------------------- */
+   JQUERY to HANDLE LAST AND END ROW?!
 
+*/
 
-/* Clearing floats without extra markup
-   Based on Simple Clearing of Floats at Sitepoint
-   [http://www.sitepoint.com/simple-clearing-of-floats/] &
-   [http://www.quirksmode.org/css/clearing.html] & */
+// INITIAL
 
-.clearfix {
-  overflow: hidden;
-  width: 100%;
+// SHOW GRID
+.showgrid div[class*='span-'] {
+  background-color: @gray-lighter;
 }
 
-/* Above clearfix hack can cause clipping when you wish to display contents over the container's edge using absolute positioning or negative grid-column-gutters. Old clearfix will live here. */
-
-.clearfix (after) {
-  display:block;
-  
-  &:after{
-    content: "\0020";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-    overflow:hidden;
-  }
+.hide-grid {
+  display: none !important;
 }
 
-/* A container should group all your grid-column-widths. Above clearfix hack is applied. */
+.grid {
+  display: flex;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.grid span {
+  background-color: rgba(0, 0, 0, 0.1);
+  width: (@grid-column-width - 2px);
+  margin-right: @grid-column-gutter;
+  border-left: 1px solid rgba(255,0,0,0.33);
+  border-right: 1px solid rgba(0,255,0,0.33);
+  display: inline-block;
+  height: inherit;
+}
+.grid span:last-of-type {
+  margin-right: 0;
+}
+// .SHOW GRID
+
 .container {
-  width: @width;
-  margin: 0 auto;
+  width: @container-width;
 }
 
-.container(clearfix-after) {
-  width: @width;
-  margin: 0 auto;
-  
-  /* This will also import the :after rule. */
-  .clearfix(after);
+.row {
+  display: flex;
 }
 
-/* Use this class on any .span / container to see the grid. */
-.showgrid {
-  background: url(@grid-column-image) repeat scroll 0% 0% transparent;
+.make-grid();
+
+// LAST
+
+.last {
+  margin-right: 0;
 }
-
-
-/* grid-column-widths
--------------------------------------------------------------- */
-
-.make-blueprint-columns();
-
-.make-blueprint-grid();
-
-/* The last grid-column-width in a row needs this class. */
-.span-@{grid-columns}, .last { margin-right: 0; }
-
-/* Use these classes to set the width of an input. */
-.input_span (@level: 1) {
-  border-left-width: 1px;
-  border-right-width: 1px;
-  padding-left: 5px;
-  padding-right: 5px;
-  width: ((@level * @grid-column-width) + ((@level - 1) * 10px) - 12px);
-}
-
-/* Border on right hand side of a grid-column-width. */
-.border {
-  .make-border(@grid-column-gutter);
-  border-right: 1px solid #eee;
-}
-
-/* Border with more whitespace, spans one grid-column-width. */
-.colborder {
-  .make-colborder(@grid-column-gutter, @grid-column-width);
-  border-right: 1px solid #eee;
-}
-
-
-/* Use these classes on an element to push it into the
-next grid-column-width, or to pull it into the previous grid-column-width.  */
-
-.pull (@level: 1) {
-	margin-left: (@grid-column-width * @level * -1) + (@level * -10px);
-	float: left; 
-	position:relative;
-}
-
-.push (@level: 1) {
-	margin: 0 ((@grid-column-width * @level * -1) + (@level * -10px)) unit(@line-height-base, em) ((@grid-column-width * @level) + (@level * 10px));
-	float: right; 
-    position:relative;
-}
-
-/* Misc classes and elements
--------------------------------------------------------------- */
-
-/* In case you need to add a gutter above/below an element */
-.prepend-top {
-  margin-top:unit(@line-height-base, em)
-}
-.append-bottom {
-  margin-bottom:unit(@line-height-base, em);
-}
-
-/* Use a .box to create a padded box inside a grid-column-width.  */
-.box {
-  padding: unit(@line-height-base, em);
-  margin-bottom: unit(@line-height-base, em);
-  background: @box_background;
-}
-
-/* Use this to create a horizontal ruler across a grid-column-width. */
-hr {
-  background: #ddd;
-  color: #ddd;
-  clear: both;
-  float: none;
-  width: 100%;
-  height: .1em;
-  margin: 0 0 1.45em;
-  border: none;
-}
-
-hr.space {
-  background: #fff;
-  color: #fff;
-  visibility: hidden;
-}
-
-/* Regular clearing
-   apply to grid-column-width that should drop below previous ones. */
-
-.clear { clear:both; }

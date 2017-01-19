@@ -9,81 +9,19 @@
 
 //=== Grid
 //
-// todo: define more grid vars
 
 @grid-columns: 24;
 @grid-column-width: 30px;
 @grid-column-gutter: 10px;
-@grid-column-image: 'grid.png';
-@width: (@grid-columns * @grid-column-width) + (@grid-columns * @grid-column-gutter) - @grid-column-gutter;
+@container-width: (@grid-columns * (@grid-column-width + @grid-column-gutter)) - @grid-column-gutter;
 
-@box_background: #E5ECF9;
-
-//== Media queries breakpoints
+//=== Golden Ratio
 //
-//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
 
-// Extra small screen / phone
-// Note: Deprecated @screen-xs and @screen-phone as of v3.0.1
-@screen-xs:                  480px;
-@screen-xs-min:              @screen-xs;
-@screen-phone:               @screen-xs-min;
-
-// Small screen / tablet
-// Note: Deprecated @screen-sm and @screen-tablet as of v3.0.1
-@screen-sm:                  768px;
-@screen-sm-min:              @screen-sm;
-@screen-tablet:              @screen-sm-min;
-
-// Medium screen / desktop
-// Note: Deprecated @screen-md and @screen-desktop as of v3.0.1
-@screen-md:                  992px;
-@screen-md-min:              @screen-md;
-@screen-desktop:             @screen-md-min;
-
-// Large screen / wide desktop
-// Note: Deprecated @screen-lg and @screen-lg-desktop as of v3.0.1
-@screen-lg:                  1200px;
-@screen-lg-min:              @screen-lg;
-@screen-lg-desktop:          @screen-lg-min;
-
-// So media queries don't overlap when required, provide a maximum
-@screen-xs-max:              (@screen-sm-min - 1);
-@screen-sm-max:              (@screen-md-min - 1);
-@screen-md-max:              (@screen-lg-min - 1);
-
-//== Container sizes
-//
-//## Define the maximum width of `.container` for different screen sizes.
-
-// Small screen / tablet
-@container-tablet:             710px; // 20px / 10px
-//** For `@screen-sm-min` and up.
-@container-sm:                 @container-tablet;
-
-// Medium screen / desktop
-@container-desktop:            950px; // original blueprint
-//** For `@screen-md-min` and up.
-@container-md:                 @container-desktop;
-
-// Large screen / wide desktop
-@container-large-desktop:      1142px; // 38px / 10px
-//** For `@screen-lg-min` and up.
-@container-lg:                 @container-large-desktop;
-
-
-//=== Buttons
-//
-// todo: add button vars
-
-@btn-default-color:  @gray;
-@btn-primary-color:  #428bca;
-@btn-depth-width:    4px;
-
-//=== Forms
-//
-// todo: add form vars
-
+@phi: 1.61803398875;
+@golden-ratio: percentage(0.61803398875);
+@golden-ratio-tall: @golden-ratio;
+@golden-ratio-small: 100 - @golden-ratio;
 
 //=== Typography
 //
@@ -96,9 +34,9 @@
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
 
-@font-size-base:          12px;
-@font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
-@font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
+@font-size-base:          16px;
+@font-size-large:         ceil((@font-size-base * 1.25));
+@font-size-small:         ceil((@font-size-base * 0.85));
 
 @font-size-h1:            3em;
 @font-size-h2:            2em;
@@ -108,32 +46,14 @@
 @font-size-h6:            1em;
 
 //** Unit-less `line-height` for use in components like buttons.
-@line-height-base:        1.5; // bootstrap: 1.428571429 // 20/14
-//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-@line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
+@line-height-base:        @phi;
+@line-height-computed:    ceil((@font-size-base * @line-height-base));
+@paragraph-margin:        ceil( (@line-height-computed * (@golden-ratio-small/100)));
+@overall-text-height:     @line-height-computed + @paragraph-margin;
 
-//== Scaffolding
-//
-// ## Settings for some of the most global styles.
-
-//** Background color for `<body>`.
-@body-bg:               #fff;
-//** Global text color on `<body>`.
 @text-color:            #333;
 
-@header-color:     #111;
+//=== Piktos
+//
 
-//** Global textual link color.
-@link-color:            blue;
-//** Link hover color set via `darken()` function.
-@link-hover-color:      darken(@link-color, 15%);
-
-@link-decoration:       underline;
-
-// Setup defaults for links and fonts/colors
-
-@font-color: #333;
-@a-color: blue;
-@a-hover-color: @a-color;
-@quiet-color: @font-color + #444;
-@loud-color: #000;
+@pikto-base-url: 'upload';
