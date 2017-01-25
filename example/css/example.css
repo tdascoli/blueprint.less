@@ -1,0 +1,263 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+body {
+  font-family: 'Montserrat';
+  background: #f5f5f5; }
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px; }
+
+.card {
+  margin: 10px 0;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff; }
+
+.card-narrow {
+  width: 950px; }
+
+.content {
+  color: #000;
+  font-family: 'Montserrat';
+  font-size: 12px;
+  margin: 0;
+  height: inherit; }
+
+/* divers */
+.toolbar {
+  position: fixed;
+  right: 0;
+  top: 0; }
+
+.pikto-thumbnail {
+  text-align: center; }
+
+.pikto-thumbnail small {
+  font-size: 0.68em;
+  line-height: 10px; }
+
+/**
+ * Toggle Switch Globals
+ *
+ * All switches should take on the class `c-hamburger` as well as their
+ * variant that will give them unique properties. This class is an overview
+ * class that acts as a reset for all versions of the icon.
+ */
+.c-hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  font-size: 0;
+  text-indent: -9999px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s; }
+
+.c-hamburger:focus {
+  outline: none; }
+
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 8px;
+  right: 8px;
+  height: 4px;
+  background: white; }
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  content: ""; }
+
+.c-hamburger span::before {
+  top: -10px; }
+
+.c-hamburger span::after {
+  bottom: -10px; }
+
+/**
+ * Style 1
+ *
+ * Rotating hamburger icon (rot), that simply rotates 90 degrees when activated.
+ * Nothing too fancy, simple transition.
+ */
+.c-hamburger--rot {
+  background-color: rgba(40, 170, 220, 0.7); }
+
+.c-hamburger--rot span {
+  transition: transform 0.3s; }
+
+/* active state, i.e. menu open */
+.drawer.open .c-hamburger--rot,
+.c-hamburger--rot.is-active {
+  background-color: #28aadc; }
+
+.drawer.open .c-hamburger--rot span,
+.c-hamburger--rot.is-active span {
+  transform: rotate(90deg); }
+
+/**
+ * Style 2
+ *
+ * Hamburger to "x" (htx). Takes on a hamburger shape, bars slide
+ * down to center and transform into an "x".
+ */
+.c-hamburger--htx {
+  background-color: rgba(40, 170, 220, 0.7); }
+
+.c-hamburger--htx span {
+  transition: background 0s 0.3s; }
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s; }
+
+.c-hamburger--htx span::before {
+  transition-property: top, transform; }
+
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform; }
+
+/* active state, i.e. menu open */
+.drawer.open .c-hamburger--htx,
+.c-hamburger--htx.is-active {
+  background-color: #28aadc; }
+
+.drawer.open .c-hamburger--htx span,
+.c-hamburger--htx.is-active span {
+  background: none; }
+
+.drawer.open .c-hamburger--htx span::before,
+.c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg); }
+
+.drawer.open .c-hamburger--htx span::after,
+.c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg); }
+
+.drawer.open .c-hamburger--htx span::before,
+.drawer.open .c-hamburger--htx span::after,
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.3s; }
+
+/**
+ * Style 3
+ *
+ * Hamburger to left-arrow (htla). Hamburger menu transforms to a left-pointing
+ * arrow. Usually indicates an off canvas menu sliding in from left that
+ * will be close on re-click of the icon.
+ */
+.c-hamburger--htla {
+  background-color: rgba(40, 170, 220, 0.7); }
+
+.c-hamburger--htla span {
+  transition: transform 0.3s; }
+
+.c-hamburger--htla span::before {
+  transform-origin: top right;
+  transition: transform 0.3s, width 0.3s, top 0.3s; }
+
+.c-hamburger--htla span::after {
+  transform-origin: bottom right;
+  transition: transform 0.3s, width 0.3s, bottom 0.3s; }
+
+/* active state, i.e. menu open */
+.drawer.open .c-hamburger--htla,
+.c-hamburger--htla.is-active {
+  background-color: #28aadc; }
+
+.drawer.open .c-hamburger--htla span,
+.c-hamburger--htla.is-active span {
+  transform: rotate(180deg); }
+
+.drawer.open .c-hamburger--htla span::before,
+.drawer.open .c-hamburger--htla span::after,
+.c-hamburger--htla.is-active span::before,
+.c-hamburger--htla.is-active span::after {
+  width: 50%; }
+
+.drawer.open .c-hamburger--htla span::before,
+.c-hamburger--htla.is-active span::before {
+  top: 0;
+  transform: translateX(20px) translateY(2px) rotate(45deg); }
+
+.drawer.open .c-hamburger--htla span::after,
+.c-hamburger--htla.is-active span::after {
+  bottom: 0;
+  transform: translateX(20px) translateY(-2px) rotate(-45deg); }
+
+/**
+ * Style 4
+ *
+ * Hamburger to right-arrow (htra). Hamburger menu transforms to a
+ * right-pointing arrow. Usually indicates an off canvas menu sliding in from
+ * right that will be close on re-click of the icon.
+ */
+.c-hamburger--htra {
+  background-color: rgba(40, 170, 220, 0.7); }
+
+.c-hamburger--htra span {
+  transition: transform 0.3s; }
+
+.c-hamburger--htra span::before {
+  transform-origin: top left;
+  transition: transform 0.3s, width 0.3s, top 0.3s; }
+
+.c-hamburger--htra span::after {
+  transform-origin: bottom left;
+  transition: transform 0.3s, width 0.3s, bottom 0.3s; }
+
+/* active state, i.e. menu open */
+.drawer.open .c-hamburger--htra,
+.c-hamburger--htra.is-active {
+  background-color: #28aadc; }
+
+.drawer.open .c-hamburger--htra span,
+.c-hamburger--htra.is-active span {
+  transform: rotate(180deg); }
+
+.drawer.open .c-hamburger--htra span::before,
+.drawer.open .c-hamburger--htra span::after,
+.c-hamburger--htra.is-active span::before,
+.c-hamburger--htra.is-active span::after {
+  width: 50%; }
+
+.drawer.open .c-hamburger--htra span::before,
+.c-hamburger--htra.is-active span::before {
+  top: 0;
+  transform: translateX(-4px) translateY(2px) rotate(-45deg); }
+
+.drawer.open .c-hamburger--htra span::after,
+.c-hamburger--htra.is-active span::after {
+  bottom: 0;
+  transform: translateX(-4px) translateY(-2px) rotate(45deg); }
+
+.grid-generator .form-group label {
+  width: calc(50% - 8px); }
+
+.grid-generator .form-control {
+  width: calc(50% - 12px); }
+
+.grid-value:after {
+  content: attr(data-value); }
+
+/*# sourceMappingURL=example.css.map */
